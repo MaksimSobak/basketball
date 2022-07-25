@@ -1,0 +1,87 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 10%;
+    height: 7vh;
+    position: absolute;
+    border: 1px solid red;
+    top: 50%;
+    left: 45%;
+    color: white;
+    text-decoration: none;
+    background-color: pink;
+    font-family: sans-serif;
+}
+.player{
+    width: 20%;
+    height: 50vh;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    animation-name: player_jump;
+    animation-duration: 1.8s;
+    animation-timing-function: linear;
+}
+.ball{
+    width: 3%;
+    position: absolute;
+    top: 50vh;
+    left: 10%;
+    z-index: -1;
+    animation-name: ball_strike;
+    animation-duration: 8s;
+    animation-timing-function: linear;
+    transform: translate(1080deg);
+}
+.bucket{
+    width: 8%;
+    position: absolute;
+    right: 0;
+    top: 20vh;
+    z-index: 0;
+}
+@keyframes player_jump {
+    0%{
+        bottom: 0; left: 0;
+    }
+    50%{
+        bottom: 3vh;
+    }
+    100%{
+        bottom: 0;
+    }
+}
+@keyframes ball_strike {
+    0%{
+        top: 50vh;
+        left: 10%;
+    }
+    20%{
+        top: 47vh;
+        left: 10%;
+    }
+    40%{
+        top: 10vh;
+        left: 98%;
+    }
+    60%{
+        top: 12vh;
+        left: 94%;
+    }
+    80%{
+        top: 95vh;
+        left: 91.5%;
+    }
+    100%{
+        top: 90vh;
+        left: 85%;
+    }
+}
